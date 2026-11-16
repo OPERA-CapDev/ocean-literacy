@@ -322,7 +322,7 @@ footer img { width: 100%; display: block; border-radius: 14px }
 .home-tile { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 24px; display: flex; flex-direction: column; align-items: flex-start }
 .home-tile h3 { font-family: var(--display); font-weight: 600; font-size: 18px; line-height: 1.25; color: var(--fg); margin: 0 0 8px }
 .home-tile p { font-size: 15px; line-height: 1.5; color: var(--muted); margin: 0 0 20px }
-.home-explore { margin-top: auto }
+.home-explore { margin-top: auto; gap: 6px } .home-explore .chev { width: 14px; height: 14px; flex: none }
 @media (max-width: 860px) { .home-tiles { grid-template-columns: 1fr } .home-tile { padding: 20px } }
 
 /* View banners (Learn, Challenges, Services) */
@@ -394,9 +394,9 @@ footer img { width: 100%; display: block; border-radius: 14px }
     <div class="eyebrow">EXPLORE THE LEARNING EXPERIENCE</div>
     <h2>Ocean Forecasting Explorer</h2>
     <div class="home-tiles">
-      <article class="home-tile"><h3>Learn</h3><p>Four interactive modules about forecasting, decisions, warnings and a knowledge check.</p><button class="btn home-explore" data-go="learn">Explore →</button></article>
-      <article class="home-tile"><h3>Ocean Challenges</h3><p>Read seven-day forecast bulletins, make choices, watch consequences and earn points.</p><button class="btn home-explore" data-go="challenges">Explore →</button></article>
-      <article class="home-tile"><h3>Where to find forecasts</h3><p>Discover official ocean and marine forecasting services.</p><button class="btn home-explore" data-go="services">Explore →</button></article>
+      <article class="home-tile"><h3>Learn</h3><p>Four interactive modules about forecasting, decisions, warnings and a knowledge check.</p><button class="btn home-explore" data-go="learn"><span>Explore</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></article>
+      <article class="home-tile"><h3>Ocean Challenges</h3><p>Read seven-day forecast bulletins, make choices, watch consequences and earn points.</p><button class="btn home-explore" data-go="challenges"><span>Explore</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></article>
+      <article class="home-tile"><h3>Where to find forecasts</h3><p>Discover official ocean and marine forecasting services.</p><button class="btn home-explore" data-go="services"><span>Explore</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></article>
     </div>
   </div>
 </section>
@@ -923,7 +923,8 @@ FR.STATIC = [
  ["Read seven-day forecast bulletins, make choices, watch consequences and earn points.","Lisez sept bulletins de prévision, faites vos choix, observez les conséquences et gagnez des points."],
  ["Where to find forecasts","Où trouver des prévisions"],
  ["Discover official ocean and marine forecasting services.","Découvrez les services officiels de prévision océanique et marine."],
- ["Explore →","Explorer →"],
+ ["Explore","Explorer"],
+ ["Learn","Apprendre"],["Challenges","Défis"],
  ["How an ocean forecast is made, and used","Comment une prévision océanique est produite, et utilisée"],
  ["Four short interactive modules, from the observing system to the decisions on the coast. Then apply what you have learned in the Challenges.","Quatre modules interactifs courts, du système d'observation aux décisions sur la côte. Appliquez ensuite ce que vous avez appris dans les Défis."],
  ["Kalk Bay, South Africa. Photo: Chesney Bradshaw / Pexels","Kalk Bay, Afrique du Sud. Photo : Chesney Bradshaw / Pexels"],
