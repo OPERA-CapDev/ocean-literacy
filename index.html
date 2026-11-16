@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OPERA Ocean Literacy Materials</title>
+<meta name="description" content="Ocean literacy materials of the OPERA Capacity Development Activities: interactive tools, factsheets, brochures and infographics on ocean forecasting.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+:root { --navy: #00125C; --blue: #1A54EB; --cyan: #00ADDC; --gold: #FFCC03; --ink: #10385F; --muted: #5B6E90; --line: #D5E1EE; --bg: #F3F7FB }
+* { box-sizing: border-box }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Noto Sans", "Segoe UI", system-ui, sans-serif; font-size: 16px; line-height: 1.55 }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 24px 16px 40px }
+.hero { position: relative; border-radius: 16px; overflow: hidden; background: var(--navy); min-height: 300px; display: flex; align-items: flex-end }
+.hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,18,92,.05) 0%, rgba(0,18,92,.6) 50%, rgba(0,18,92,.95) 100%) }
+.hero .text { position: relative; z-index: 1; padding: 32px 28px 24px; color: #fff; max-width: 70ch }
+.eyebrow { font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px }
+h1 { margin: 0 0 8px; font-size: clamp(26px, 4vw, 40px); line-height: 1.1; font-weight: 800; letter-spacing: -.01em }
+.hero p { margin: 0; color: #E6EEF8 }
+.hero .credit { position: absolute; right: 12px; bottom: 10px; z-index: 1; font-size: 11px; color: #fff; background: rgba(0,0,0,.45); padding: 2px 8px; border-radius: 6px }
+h2 { font-size: 22px; font-weight: 700; color: var(--navy); margin: 36px 0 12px }
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)) }
+.card { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 22px; display: flex; flex-direction: column; gap: 8px }
+.card h3 { margin: 0; font-size: 18px; color: var(--navy) }
+.card p { margin: 0; color: var(--ink) }
+.card .tag { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--blue) }
+.btn { margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; min-height: 44px; padding: 8px 18px; border-radius: 8px; background: var(--blue); color: #fff; font-weight: 600; text-decoration: none }
+.btn:hover { background: var(--navy) }
+.soon { color: var(--muted); font-size: 14px }
+footer { margin-top: 40px; background: var(--navy); border-radius: 16px; padding: 20px 24px; color: #DCE6F5; font-size: 13px; text-align: center }
+footer img { max-width: 100%; height: auto; display: block; margin: 0 auto 12px }
+footer a { color: #fff }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <img src="kalkbay.jpg" alt="Fishing boats at Kalk Bay harbour, South Africa">
+    <div class="text">
+      <div class="eyebrow">OPERA Capacity Development Activities</div>
+      <h1>Ocean Literacy Materials</h1>
+      <p>Interactive tools, factsheets, brochures and infographics on ocean forecasting, for students, professionals and the public in Africa and beyond. Texts under CC BY 4.0.</p>
+    </div>
+    <span class="credit">Kalk Bay, South Africa. Photo: Chesney Bradshaw / Pexels</span>
+  </div>
+
+  <h2>Interactive tools</h2>
+  <div class="grid">
+    <article class="card">
+      <span class="tag">Interactive page</span>
+      <h3>Ocean Forecasting Explorer</h3>
+      <p>How a forecast is made, how it is used on the coast, a 7 day decision challenge and a directory of official forecasting services.</p>
+      <a class="btn" href="ocean-forecasting-explorer/">Open the Explorer</a>
+    </article>
+  </div>
+
+  <h2>Factsheets, brochures and infographics</h2>
+  <p class="soon">The OPERA Ocean Literacy series (factsheets OL-002 to OL-033, brochures and infographics) is published on the <a href="https://www.unoceanprediction.org/en/resource-center?field_resource_type%5B0%5D=ocean_literacy_materials">OceanPrediction DCC Resource Center</a>. Direct links will be added here as the documents are released.</p>
+
+  <footer>
+    <img src="footer-logos.png" alt="Logos: European Union, Global Gateway, OceanPrediction DCC, Mercator Ocean International, GGOSSS, Université d'Abomey Calavi, CIPMA UNESCO Chair">
+    OPERA, Ocean Prediction Enhancement in Regions of Africa, is a five year project (2025 to 2029) implemented by Mercator Ocean International with funding from the European Union, as the ocean component of the ArcX programme. Capacity Development Activities led by the CIPMA UNESCO Chair (Université d'Abomey Calavi, Benin) and the Gulf of Guinea Ocean Sciences Summer School (GGOSSS). · <a href="https://www.ggosss.org/">ggosss.org</a>
+  </footer>
+</div>
+</body>
+</html>
