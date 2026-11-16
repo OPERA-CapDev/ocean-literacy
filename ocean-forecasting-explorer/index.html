@@ -549,7 +549,7 @@ footer img { width: 100%; display: block; border-radius: 14px }
 
 <!-- STATS (host view) -->
 <section id="v-stats" class="stage one" hidden>
-  <div class="card stats"><h2>Usage statistics</h2><p class="muted">Anonymous counters. Only visible with #stats in the address.</p><div id="statsbody">Loading…</div><div class="row" style="margin-top:10px"><button class="btn" id="statscsv">Download CSV</button></div></div>
+  <div class="card stats"><h2>Usage statistics</h2><p class="muted">Anonymous counters, for the hosts of the page.</p><form id="statslogin" class="row" style="margin:12px 0" hidden><input type="password" id="statspw" autocomplete="current-password" placeholder="Host password" aria-label="Host password" style="font: inherit; padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; min-width: 220px"><button class="btn primary" type="submit">Open</button><span class="small muted" id="statsmsg"></span></form><div id="statsbody"></div><div class="row" style="margin-top:10px" id="statstools" hidden><button class="btn" id="statscsv">Download CSV</button></div></div>
 </section>
 
 <footer>
@@ -563,6 +563,7 @@ footer img { width: 100%; display: block; border-radius: 14px }
 const CONFIG = {
   stats: true,                       // set to false to disable anonymous counters
   deploy: 'github',                  // 'test' | 'ggosss' | 'github' | 'dcc'
+  statsHash: '71e12c0ce2fc8c89542f1ba013d455ed456a038c5b1b42243b6adbf05a447ed4', // SHA-256 of the host password for the #stats view; to change it, open the page, press F12 and type hashpw('new password') in the console, then paste the result here
   dccLibrary: 'https://www.unoceanprediction.org/en/resource-center?field_resource_type%5B0%5D=ocean_literacy_materials',
   firebase: { apiKey: "AIzaSyCivtQ9DP8EpVw1oZyIH_1FQ6et9subDXM", authDomain: "opera-webinars.firebaseapp.com", databaseURL: "https://opera-webinars-default-rtdb.firebaseio.com", projectId: "opera-webinars" }
 };
@@ -1160,8 +1161,18 @@ document.addEventListener('click', e => { if (e.target.closest('#svcs a')) markD
 
 /* =========================== STATS VIEW =========================== */
 let statsData = null;
+async function sha256(str) { const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str)); return Array.from(new Uint8Array(buf)).map(x => x.toString(16).padStart(2, '0')).join(''); }
+function hashpw(pw) { sha256(pw).then(h => console.log('statsHash: ' + h)); return 'see the console'; }
 function drawStats() {
-  const b = $('#statsbody');
+  const b = $('#statsbody'); const login = $('#statslogin'); const tools = $('#statstools');
+  const unlocked = (() => { try { return sessionStorage.getItem('ofe:host') === CONFIG.statsHash; } catch (e) { return false; } })();
+  if (!unlocked) {
+    b.innerHTML = ''; tools.hidden = true; login.hidden = false; $('#statspw').focus();
+    login.onsubmit = async e => { e.preventDefault(); const msg = $('#statsmsg'); if (!window.crypto || !crypto.subtle) { msg.textContent = 'This browser cannot check the password here (secure page required).'; return; }
+      const h = await sha256($('#statspw').value); if (h === CONFIG.statsHash) { try { sessionStorage.setItem('ofe:host', h); } catch (e2) {} msg.textContent = ''; drawStats(); } else { msg.textContent = 'Wrong password.'; $('#statspw').select(); } };
+    postHeight(); return;
+  }
+  login.hidden = true; tools.hidden = false; b.innerHTML = 'Loading…';
   if (!db) { b.innerHTML = '<p class="muted">Statistics are disabled or Firebase did not load.</p>'; return; }
   db.ref(`rooms/ofe/stats/${CONFIG.deploy}`).once('value').then(snap => {
     const d = snap.val() || {}; statsData = d;
