@@ -405,7 +405,7 @@ footer img { width: 100%; display: block; border-radius: 14px }
     <div class="eyebrow">EXPLORE THE LEARNING EXPERIENCE</div>
     <h2>Ocean Forecasting Explorer</h2>
     <div class="home-tiles">
-      <article class="home-tile"><h3>Learn</h3><p>Four interactive modules about forecasting, decisions, warnings and a knowledge check.</p><button class="btn home-explore" data-go="learn"><span>Explore</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></article>
+      <article class="home-tile"><h3>Learn</h3><p>Three interactive modules about forecasting, decisions and warnings.</p><button class="btn home-explore" data-go="learn"><span>Explore</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></article>
       <article class="home-tile"><h3>Ocean Challenges</h3><p>Read seven-day forecast bulletins, make choices, watch consequences and earn points.</p><button class="btn home-explore" data-go="challenges"><span>Explore</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></article>
       <article class="home-tile"><h3>Where to find forecasts</h3><p>Discover official ocean and marine forecasting services.</p><button class="btn home-explore" data-go="services"><span>Explore</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></article>
     </div>
@@ -415,7 +415,7 @@ footer img { width: 100%; display: block; border-radius: 14px }
 <section id="v-learn" class="stage one" hidden>
   <div class="banner">
     <img src="img/kalkbay.jpg" alt="Fishing boats at Kalk Bay harbour, South Africa">
-    <div class="banner-text"><div class="eyebrow">Learn</div><h2>How an ocean forecast is made, and used</h2><p>Four short interactive modules, from the observing system to the decisions on the coast. Then apply what you have learned in the Challenges.</p></div>
+    <div class="banner-text"><div class="eyebrow">Learn</div><h2>How an ocean forecast is made, and used</h2><p>Three short interactive modules, from the observing system to the decisions on the coast. Then test yourself in the Challenges.</p></div>
     <span class="credit">Kalk Bay, South Africa. Photo: Chesney Bradshaw / Pexels</span>
   </div>
   <div class="board">
@@ -446,6 +446,17 @@ footer img { width: 100%; display: block; border-radius: 14px }
           </div>
         </div>
       </article>
+    </div>
+  </div>
+  <div class="board">
+    <h2>Read the factsheets</h2>
+    <p class="muted">The texts of this page come from the OPERA Ocean Literacy factsheets, available on the Ocean Prediction DCC resource centre.</p>
+    <div class="lib" id="lib"></div>
+    <h3 style="margin:32px 0 12px">Learn more with OPERA</h3>
+    <div class="row">
+      <a class="btn" href="https://events.unoceanprediction.org/fundamentals-of-ocean-forecasting" target="_blank" rel="noopener" data-ev="link:mooc">The OPERA MOOC, Fundamentals of Ocean Forecasting</a>
+      <a class="btn" href="https://www.unoceanprediction.org/en/ocean-prediction-enhancement-regions-africa-opera" target="_blank" rel="noopener" data-ev="link:dcc">OPERA on the Ocean Prediction DCC site</a>
+      <a class="btn" href="https://www.ggosss.org/" target="_blank" rel="noopener" data-ev="link:ggosss">GGOSSS</a>
     </div>
   </div>
 </section>
@@ -497,27 +508,6 @@ footer img { width: 100%; display: block; border-radius: 14px }
       <div class="fig2"><div class="card" id="tdetail"></div><div><img class="figimg" src="img/ensemble.jpg" alt="Ensemble forecast: many lines start close together and spread apart with forecast range"><p class="cap">Ensemble forecasts start from slightly different initial conditions and diverge with time; the spread gives an indication of the forecast uncertainty. Source: ETOOFS Guide (IOC UNESCO, 2022), Figure 5.10, via OL-013.</p></div></div>
     </div>
     <p class="src">Texts: OPERA factsheets OL-009, OL-013, OL-025, OL-027 and OL-033.</p>
-  </div>
-</section>
-
-<!-- MODULE 4 -->
-<section id="v-quiz" class="stage one" hidden>
-  <div class="board">
-    <h2>Test yourself</h2>
-    <p class="muted">Four short quizzes. Pick one answer per question; the explanation appears at once. Nothing is stored beyond your browser.</p>
-    <div class="qgrid" id="qgrid"></div>
-    <div id="quiz" style="margin-top:24px"></div>
-  </div>
-  <div class="board">
-    <h2>Read the factsheets</h2>
-    <p class="muted">The texts of this page come from the OPERA Ocean Literacy factsheets, available on the Ocean Prediction DCC resource centre.</p>
-    <div class="lib" id="lib"></div>
-    <h3 style="margin:32px 0 12px">Learn more with OPERA</h3>
-    <div class="row">
-      <a class="btn" href="https://events.unoceanprediction.org/fundamentals-of-ocean-forecasting" target="_blank" rel="noopener" data-ev="link:mooc">The OPERA MOOC, Fundamentals of Ocean Forecasting</a>
-      <a class="btn" href="https://www.unoceanprediction.org/en/ocean-prediction-enhancement-regions-africa-opera" target="_blank" rel="noopener" data-ev="link:dcc">OPERA on the Ocean Prediction DCC site</a>
-      <a class="btn" href="https://www.ggosss.org/" target="_blank" rel="noopener" data-ev="link:ggosss">GGOSSS</a>
-    </div>
   </div>
 </section>
 
@@ -719,8 +709,7 @@ let KINDS = [['all','All'],['global','Global'],['regional','Africa, regional'],[
 let LEARN_MODULES = [
   { id:'chain', n:'1', t:'How a forecast is made', d:'Five stages, one picture, and what each one needs.', time:'4 min' },
   { id:'decisions', n:'2', t:'One forecast, five decisions', d:'Choose a sector, decide, then see what really happened.', time:'5 min per case' },
-  { id:'tenses', n:'3', t:'Forecast, warning or service?', d:'Sort six messages, then travel from the past to the days ahead.', time:'5 min' },
-  { id:'quiz', n:'4', t:'Test yourself', d:'Four short quizzes and the factsheets behind them.', time:'3 min per quiz' }
+  { id:'tenses', n:'3', t:'Forecast, warning or service?', d:'Sort six messages, then travel from the past to the days ahead.', time:'5 min' }
 ];
 
 /* =========================== FRENCH CONTENT (version française) =========================== */
@@ -869,8 +858,7 @@ FR.KINDS = [['all',"Tous"],['global',"Mondial"],['regional',"Afrique, régional"
 FR.LEARN_MODULES = [
   { id:'chain', n:'1', t:"Comment une prévision est produite", d:"Cinq étapes, une image, et ce dont chacune a besoin.", time:"4 min" },
   { id:'decisions', n:'2', t:"Une prévision, cinq décisions", d:"Choisissez un secteur, décidez, puis découvrez ce qui s'est vraiment passé.", time:"5 min par cas" },
-  { id:'tenses', n:'3', t:"Prévision, alerte ou service ?", d:"Triez six messages, puis voyagez du passé aux jours à venir.", time:"5 min" },
-  { id:'quiz', n:'4', t:"Testez-vous", d:"Quatre quiz courts et les fiches qui les appuient.", time:"3 min par quiz" }
+  { id:'tenses', n:'3', t:"Prévision, alerte ou service ?", d:"Triez six messages, puis voyagez du passé aux jours à venir.", time:"5 min" }
 ];
 FR.CHALLENGES = [
  {day:1,title:"Inondation côtière",sector:"Protection du littoral",score:true,video:'flood',source:"INAM Mozambique / FEWS INAM, OPERA OL-027",url:'https://inam.gov.mz/',bulletin:"BULLETIN D'EXERCICE · Côte de Beira · Valable demain de 06 h 00 à 18 h 00",forecast:"Surcote de tempête : +1,4 m au-dessus de la marée prévue ; vagues significatives : 3,5 m ; vent de mer : 55 km/h. Les quartiers bas peuvent être inondés.",q:"Vous coordonnez la protection civile du littoral. Quelle est votre priorité ?",opts:[["Lancer des alertes précoces, préparer des abris et évacuer les zones basses exposées.",true,"Les habitants ont le temps de rejoindre un lieu sûr. La préparation réduit l'exposition aux inondations côtières."],["Attendre que l'eau de mer atteigne les maisons avant d'annoncer les évacuations.",false,"L'eau bloque les routes et retarde l'évacuation. Davantage de personnes se retrouvent piégées."],["Annoncer que la prévision garantit une inondation partout.",false,"Exagérer la certitude peut saper la confiance. Expliquez le risque, les lieux et l'incertitude."]]},
@@ -931,7 +919,7 @@ FR.STATIC = [
  ["Start learning","Commencer à apprendre"],["Try challenges","Essayer les défis"],["About this activity","À propos de cette activité"],
  ["Kalk Bay harbour, South Africa. © Chesney Bradshaw","Port de Kalk Bay, Afrique du Sud. © Chesney Bradshaw"],
  ["EXPLORE THE LEARNING EXPERIENCE","EXPLOREZ L'EXPÉRIENCE D'APPRENTISSAGE"],
- ["Four interactive modules about forecasting, decisions, warnings and a knowledge check.","Quatre modules interactifs sur la prévision, les décisions, les alertes, et un test de connaissances."],
+ ["Three interactive modules about forecasting, decisions and warnings.","Trois modules interactifs sur la prévision, les décisions et les alertes."],
  ["Ocean Challenges","Défis océaniques"],
  ["Read seven-day forecast bulletins, make choices, watch consequences and earn points.","Lisez sept bulletins de prévision, faites vos choix, observez les conséquences et gagnez des points."],
  ["Where to find forecasts","Où trouver des prévisions"],
@@ -939,7 +927,7 @@ FR.STATIC = [
  ["Explore","Explorer"],
  ["Learn","Apprendre"],["Challenges","Défis"],
  ["How an ocean forecast is made, and used","Comment une prévision océanique est produite, et utilisée"],
- ["Four short interactive modules, from the observing system to the decisions on the coast. Then apply what you have learned in the Challenges.","Quatre modules interactifs courts, du système d'observation aux décisions sur la côte. Appliquez ensuite ce que vous avez appris dans les Défis."],
+ ["Three short interactive modules, from the observing system to the decisions on the coast. Then test yourself in the Challenges.","Trois modules interactifs courts, du système d'observation aux décisions sur la côte. Testez-vous ensuite dans les Défis."],
  ["Kalk Bay, South Africa. Photo: Chesney Bradshaw / Pexels","Kalk Bay, Afrique du Sud. Photo : Chesney Bradshaw / Pexels"],
  ["Each module takes a few minutes. Your progress is kept in this browser only.","Chaque module prend quelques minutes. Votre progression est conservée seulement dans ce navigateur."],
  ["OCEANPREDICTION RESOURCE CENTER","CENTRE DE RESSOURCES OCEANPREDICTION"],
@@ -966,8 +954,6 @@ FR.STATIC = [
  ["Reanalysis · years to decades ago","Réanalyse · des années aux décennies en arrière"],["Analysis · today","Analyse · aujourd'hui"],["Forecast · the coming days","Prévision · les jours à venir"],
  ["Ensemble forecasts start from slightly different initial conditions and diverge with time; the spread gives an indication of the forecast uncertainty. Source: ETOOFS Guide (IOC UNESCO, 2022), Figure 5.10, via OL-013.","Les prévisions d'ensemble partent de conditions initiales légèrement différentes et s'écartent avec le temps ; leur dispersion donne une indication de l'incertitude de la prévision. Source : Guide ETOOFS (COI UNESCO, 2022), figure 5.10, via OL-013."],
  ["Texts: OPERA factsheets OL-009, OL-013, OL-025, OL-027 and OL-033.","Textes : fiches OPERA OL-009, OL-013, OL-025, OL-027 et OL-033."],
- ["Test yourself","Testez-vous"],
- ["Four short quizzes. Pick one answer per question; the explanation appears at once. Nothing is stored beyond your browser.","Quatre quiz courts. Choisissez une réponse par question ; l'explication apparaît aussitôt. Rien n'est conservé en dehors de votre navigateur."],
  ["Read the factsheets","Lire les fiches"],
  ["The texts of this page come from the OPERA Ocean Literacy factsheets, available on the Ocean Prediction DCC resource centre.","Les textes de cette page viennent des fiches de culture océanique d'OPERA, disponibles sur le centre de ressources du DCC OceanPrediction."],
  ["Learn more with OPERA","Aller plus loin avec OPERA"],
@@ -1014,12 +1000,12 @@ function inc(path) { if (!db) return; try { db.ref(`rooms/ofe/stats/${CONFIG.dep
 function track(ev) { inc('events/' + ev.replace(/[.#$\[\]\/]/g, '_')); }
 
 /* =========================== NAV =========================== */
-const VIEWS = ['home', 'learn', 'chain', 'decisions', 'tenses', 'quiz', 'services', 'challenges', 'about', 'stats'];
+const VIEWS = ['home', 'learn', 'chain', 'decisions', 'tenses', 'services', 'challenges', 'about', 'stats'];
 let cur = 'home';
 function drawNav() {
   const nav = $('#nav'); nav.innerHTML = '';
   const b0 = el('button', 'home', T('Home')); b0.setAttribute('aria-selected', cur === 'home'); b0.onclick = () => go('home'); nav.appendChild(b0);
-  [['learn','Learn'],['challenges','Challenges'],['services','Services']].forEach(([id,name]) => { const b=el('button','',T(name)); b.setAttribute('aria-selected',cur===id || (id==='learn' && ['chain','decisions','tenses','quiz'].includes(cur))); b.onclick=()=>go(id); nav.appendChild(b); });
+  [['learn','Learn'],['challenges','Challenges'],['services','Services']].forEach(([id,name]) => { const b=el('button','',T(name)); b.setAttribute('aria-selected',cur===id || (id==='learn' && ['chain','decisions','tenses'].includes(cur))); b.onclick=()=>go(id); nav.appendChild(b); });
 }
 function go(v) {
   if (!VIEWS.includes(v)) v = 'home';
@@ -1182,7 +1168,7 @@ function drawStats() {
     const d = snap.val() || {}; statsData = d;
     const sum = o => Object.values(o || {}).reduce((a, v) => a + (+v || 0), 0);
     const table = (title, o) => `<h3>${title}</h3><table>${Object.entries(o || {}).sort((a, b2) => (b2[1] || 0) - (a[1] || 0)).map(([k, v]) => `<tr><td>${esc(k)}</td><td>${v}</td></tr>`).join('') || '<tr><td class="muted">no data</td></tr>'}</table>`;
-    b.innerHTML = `<p><b>${sum(d.visits)}</b> visits · <b>${sum(d.visitors)}</b> distinct visitors · deployment <b>${CONFIG.deploy}</b></p>` + challengeStatsHTML(d.events || {}) + quizStatsHTML(d.events || {}) + table('Visits per day', d.visits) + table('Screens', d.screen) + table('Referrers', d.referrer) + table('Time on page', d.time) + table('Events', d.events);
+    b.innerHTML = `<p><b>${sum(d.visits)}</b> visits · <b>${sum(d.visitors)}</b> distinct visitors · deployment <b>${CONFIG.deploy}</b></p>` + challengeStatsHTML(d.events || {}) + table('Visits per day', d.visits) + table('Screens', d.screen) + table('Referrers', d.referrer) + table('Time on page', d.time) + table('Events', d.events);
     postHeight();
   }).catch(e => { b.innerHTML = `<p class="muted">Could not read statistics (${esc(e.message || e)}).</p>`; });
   $('#statscsv').onclick = () => { if (!statsData) return; const rows = [['group', 'key', 'value']]; Object.entries(statsData).forEach(([g, o]) => Object.entries(o || {}).forEach(([k, v]) => rows.push([g, k, v]))); const csv = rows.map(r => r.map(x => `"${String(x).replace(/"/g, '""')}"`).join(',')).join('\n'); const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' })); a.download = `ofe-stats-${CONFIG.deploy}-${new Date().toISOString().slice(0, 10)}.csv`; a.click(); };
@@ -1283,13 +1269,12 @@ function challengeFeedback(c,r){const good=r.correct;return `<div class="challen
 
 /* Texts that change in the quick version: English original, English quick, French quick */
 const QUICK_STATIC = [
- ["Four interactive modules about forecasting, decisions, warnings and a knowledge check.","Three short modules: how a forecast is made, two real decisions and a quiz. About 10 minutes.","Trois modules courts : comment une prévision est produite, deux décisions réelles et un quiz. Environ 10 minutes."],
+ ["Three interactive modules about forecasting, decisions and warnings.","Two short modules: how a forecast is made, and two real decisions. About 10 minutes.","Deux modules courts : comment une prévision est produite, et deux décisions réelles. Environ 10 minutes."],
  ["Read seven-day forecast bulletins, make choices, watch consequences and earn points.","Three forecast bulletins, three decisions, 100 points to earn. About 10 minutes.","Trois bulletins de prévision, trois décisions, 100 points à gagner. Environ 10 minutes."],
  ["Discover official ocean and marine forecasting services.","Six official ocean and marine forecasting services, from global to local.","Six services officiels de prévision océanique et marine, du mondial au local."],
- ["Four short interactive modules, from the observing system to the decisions on the coast. Then apply what you have learned in the Challenges.","Three short modules, about 10 minutes in all, from the observing system to the decisions on the coast. Then apply what you have learned in the Challenges.","Trois modules courts, environ 10 minutes en tout, du système d'observation aux décisions sur la côte. Appliquez ensuite ce que vous avez appris dans les Défis."],
+ ["Three short interactive modules, from the observing system to the decisions on the coast. Then test yourself in the Challenges.","Two short modules, about 10 minutes in all, from the observing system to the decisions on the coast. Then test yourself in the Challenges.","Deux modules courts, environ 10 minutes en tout, du système d'observation aux décisions sur la côte. Testez-vous ensuite dans les Défis."],
  ["One forecast, five decisions","One forecast, two decisions","Une prévision, deux décisions"],
  ["Here are five examples from the OPERA factsheet <i>Ocean forecasting in action</i>. Choose a sector, see the forecasts it needs, decide what you would do, then read what really happened.","Here are two examples from the OPERA factsheet <i>Ocean forecasting in action</i>. Choose a sector, see the forecasts it needs, decide what you would do, then read what really happened.","Voici deux exemples tirés de la fiche OPERA <i>La prévision océanique en action</i>. Choisissez un secteur, voyez les prévisions dont il a besoin, décidez ce que vous feriez, puis lisez ce qui s'est vraiment passé."],
- ["Four short quizzes. Pick one answer per question; the explanation appears at once. Nothing is stored beyond your browser.","One short quiz. Pick one answer per question; the explanation appears at once. Nothing is stored beyond your browser.","Un quiz court. Choisissez une réponse par question ; l'explication apparaît aussitôt. Rien n'est conservé en dehors de votre navigateur."],
  ["7 day ocean forecast challenge","3 day ocean forecast challenge","Le défi des 3 jours de prévision océanique"],
  ["Seven missions, one forecast bulletin each. Decide, then discover the consequences.","Three missions, one forecast bulletin each. Decide, then discover the consequences.","Trois missions, un bulletin de prévision chacune. Décidez, puis découvrez les conséquences."],
  ["Read an illustrative forecast bulletin, choose your response and discover the consequences. All seven missions count toward a total of 100 points. You can retry any mission. Forecast numbers are fictional training examples, not live warnings.","Read an illustrative forecast bulletin, choose your response and discover the consequences. The three missions count toward a total of 100 points. You can retry any mission. Forecast numbers are fictional training examples, not live warnings.","Lisez un bulletin de prévision d'exercice, choisissez votre réponse et découvrez les conséquences. Les trois missions comptent pour un total de 100 points. Vous pouvez rejouer chaque mission. Les chiffres des prévisions sont des exemples fictifs d'exercice, pas des alertes réelles."],
@@ -1312,11 +1297,10 @@ function applyStatic() {
 const QUICK = CONFIG.quick || new URLSearchParams(location.search).get('mode') === 'quick';
 const QUICK_SVC = [0, 3, 4, 7, 9, 10]; /* indices in SERVICES kept in the quick version */
 const QUICK_MODULE_T = { decisions: { en: 'One forecast, two decisions', fr: 'Une prévision, deux décisions' } };
-const QUICK_MODULE_D = { decisions: { en: 'Two sectors: decide, then see what really happened.', fr: 'Deux secteurs : décidez, puis découvrez ce qui s\'est vraiment passé.' }, quiz: { en: 'One short quiz and the factsheets behind it.', fr: 'Un quiz court et les fiches qui l\'appuient.' } };
-const QUICK_TIME = { chain: '4 min', decisions: '4 min', quiz: '3 min' };
+const QUICK_MODULE_D = { decisions: { en: 'Two sectors: decide, then see what really happened.', fr: 'Deux secteurs : décidez, puis découvrez ce qui s\'est vraiment passé.' }, };
+const QUICK_TIME = { chain: '4 min', decisions: '5 min' };
 function applyQuick(D, l) { if (!QUICK) return D; return Object.assign({}, D, {
   SECTORS: D.SECTORS.filter(x => x.id === 'fish' || x.id === 'drr'),
-  QUIZZES: D.QUIZZES.filter(q => q.id === 'q4'),
   CHALLENGES: D.CHALLENGES.filter(c => c.day <= 3).map((c, i) => Object.assign({}, c, { pts: [35, 35, 30][i] })),
   SERVICES: D.SERVICES.filter((x, i) => QUICK_SVC.includes(i)),
   LEARN_MODULES: D.LEARN_MODULES.filter(m => m.id !== 'tenses').map((m, i) => Object.assign({}, m, { n: String(i + 1), t: (QUICK_MODULE_T[m.id] || {})[l] || m.t, d: (QUICK_MODULE_D[m.id] || {})[l] || m.d, time: QUICK_TIME[m.id] || m.time }))
@@ -1324,11 +1308,11 @@ function applyQuick(D, l) { if (!QUICK) return D; return Object.assign({}, D, {
 function useData(l) { const D = applyQuick(l === 'fr' ? FR : DATA_EN, l); ({CHAIN, SECTORS, BOXES, CARDS, TENSES, QUIZZES, LIB, SERVICES, SERVICE_IMG, KINDS, LEARN_MODULES, CHALLENGES, CHALLENGE_IMG} = D); }
 function toggleLang() { setLang(lang === 'fr' ? 'en' : 'fr'); }
 function setLang(l) { lang = l; store.set('lang', l); useData(l); applyStatic(); redrawAll(); track('lang:' + l); }
-function redrawAll() { drawNav(); drawLearn(); drawModNav(); drawChallenges(); document.querySelectorAll('#fig1 .hot').forEach(b => b.remove()); drawChainFigure(); drawTiles(); if (sec) drawCase(); drawSort(); drawTenses(); drawQuizGrid(); if (qz) drawQuiz(); drawLib(); drawServices(); postHeight(); }
+function redrawAll() { drawNav(); drawLearn(); drawModNav(); drawChallenges(); document.querySelectorAll('#fig1 .hot').forEach(b => b.remove()); drawChainFigure(); drawTiles(); if (sec) drawCase(); drawSort(); drawTenses(); drawLib(); drawServices(); postHeight(); }
 
 /* =========================== INIT =========================== */
 useData(lang); applyStatic();
-drawHome(); drawLearn(); drawModNav(); drawChallenges(); drawChainFigure(); drawTiles(); drawSort(); drawTenses(); $('#tslider').addEventListener('input', drawTenses); drawQuizGrid(); drawLib(); drawServices(); $('#svcq').addEventListener('input', drawServices);
+drawHome(); drawLearn(); drawModNav(); drawChallenges(); drawChainFigure(); drawTiles(); drawSort(); drawTenses(); $('#tslider').addEventListener('input', drawTenses); drawLib(); drawServices(); $('#svcq').addEventListener('input', drawServices);
 initStats(); go(location.hash.slice(1) || 'home');
 </script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js" onload="window.__fb=1"></script>
