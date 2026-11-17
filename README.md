@@ -7,6 +7,7 @@ Website of the ocean literacy materials of the OPERA Capacity Development Activi
 ## Structure
 
 - `index.html`: the landing page (list of materials). Edit it to add a card per tool or document.
+- `ocean-forecasting-explorer-quick/`: the quick version (about 10 minutes per section), at https://ocean-literacy.ggosss.org/ocean-forecasting-explorer-quick/; it is a copy of the full version with `CONFIG.quick = true`, refreshed with `./sync-quick.sh`. The full version also switches to the short form with `?mode=quick` in its address.
 - `ocean-forecasting-explorer/`: the Ocean Forecasting Explorer (English and French, FR | EN button), at https://ocean-literacy.ggosss.org/ocean-forecasting-explorer/ (its own notes: `ocean-forecasting-explorer/README_site.md`).
 - `CNAME`: the custom domain. Keep it; GitHub reads it to serve the site at ocean-literacy.ggosss.org.
 - Future materials go in their own folder next to `ocean-forecasting-explorer/`, for example `oofs-brochure/`.
