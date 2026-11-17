@@ -241,6 +241,9 @@ a { color: var(--navy) }
 .svc .who { margin-top: -4px }
 .svc .link { margin-top: 4px }
 .svc h3 { margin: 0; font-family: var(--display); font-weight: 600; font-size: 16px; line-height: 1.3 }
+.svc h3 a { color: var(--fg); text-decoration: none }
+.svc h3 a:hover { color: var(--navy); text-decoration: underline; text-underline-offset: 3px }
+.svc .link .chev { width: 15px; height: 15px; flex: none }
 .badge { font: 500 12px var(--body); line-height: 20px; color: var(--muted); white-space: nowrap; flex: none; display: inline-flex; align-items: center; gap: 6px; --dot: var(--teal) }
 .badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--dot) }
 .badge.global { --dot: var(--navy) } .badge.national { --dot: var(--gold) } .badge.tool { --dot: var(--c-coast) }
@@ -894,7 +897,7 @@ FR.UI = {
   '{n} questions':"{n} questions", ' · last score {a} / {b}':" · dernier score {a} / {b}", 'Your score: {a} out of {b}':"Votre score : {a} sur {b}",
   'No ranking, no storage beyond your browser.':"Pas de classement ; rien n'est conservé en dehors de votre navigateur.", 'Try again':"Réessayer", 'Another quiz':"Un autre quiz",
   'question {a} of {b}':"question {a} sur {b}", 'Correct.':"Correct.", 'Not quite.':"Pas tout à fait.", 'The answer is {a}:':"La réponse est {a} :", 'Next question':"Question suivante", 'See my score':"Voir mon score",
-  'Open the official site →':"Ouvrir le site officiel →", 'No service matches this search.':"Aucun service ne correspond à cette recherche.", 'Search: waves, Ghana, Copernicus…':"Rechercher : vagues, Ghana, Copernicus…",
+  'Open the official site':"Ouvrir le site officiel", 'No service matches this search.':"Aucun service ne correspond à cette recherche.", 'Search: waves, Ghana, Copernicus…':"Rechercher : vagues, Ghana, Copernicus…",
   'Final score':"Score final", 'Current score':"Score actuel", '{n} / 7 completed':"{n} / 7 terminés",
   'Days 1 to 6: 15 points each; Day 7: 10 points. All seven days must be completed to unlock your final result.':"Jours 1 à 6 : 15 points chacun ; jour 7 : 10 points. Les sept jours doivent être terminés pour débloquer votre résultat final.",
   'DAY':"JOUR", 'points':"points", 'Not attempted':"Pas encore joué",
@@ -1030,6 +1033,7 @@ addEventListener('hashchange', () => go(location.hash.slice(1) || 'home'));
 function drawHome() { /* Home contains the introduction; modules are exclusively in Learn. */ }
 
 const CHEV_L='<svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const EXT='<svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M6.5 3.5H3.5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V9.5M9.5 2.5h4v4M13.5 2.5 7.5 8.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const CHEV_R='<svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 function drawLearn(){const m=$('#learnmodules');m.innerHTML='';LEARN_MODULES.forEach(x=>{const b=el('button','mcard',`<span class="n">${T('MODULE')} ${x.n} · ${x.time}</span><h3>${x.t}</h3><span class="t">${x.d}</span><span class="start">${done[x.id]?T('Open again'):T('Start')}${CHEV_R}</span>${done[x.id]?'<span class="donemark">'+T('Done')+'</span>':''}`);b.onclick=()=>go(x.id);m.appendChild(b);});}
 /* Module navigation: back to Learn, previous and next module, at the top and the bottom of each module */
@@ -1151,7 +1155,7 @@ function drawServices() {
   const box = $('#svcs'); box.innerHTML = '';
   list.forEach(x => { const kl = KINDS.find(k => k[0] === x.k)[1]; const im = SERVICE_IMG[x.n] || SERVICE_IMG.default;
     const logo = x.logo ? `<span class="logo"><img src="${x.logo}" alt="${esc(x.n)} logo"></span>` : '';
-    box.appendChild(el('div', 'svc', `<div class="svcpic"><img src="${im[0]}" alt=""><span class="badge ${x.k}">${kl}</span>${logo}<span class="cr">${esc(im[1])}</span></div><div class="svcbody"><h3>${x.n}</h3><div class="who">${x.who}</div><p>${x.d}</p><a class="link" href="${x.u}" target="_blank" rel="noopener" data-ev="svc:${x.n.slice(0, 30)}">${T('Open the official site →')}</a></div>`)); });
+    box.appendChild(el('div', 'svc', `<div class="svcpic"><img src="${im[0]}" alt=""><span class="badge ${x.k}">${kl}</span>${logo}<span class="cr">${esc(im[1])}</span></div><div class="svcbody"><h3><a href="${x.u}" target="_blank" rel="noopener" data-ev="svc:${x.n.slice(0, 30)}">${x.n}</a></h3><div class="who">${x.who}</div><p>${x.d}</p><a class="link" href="${x.u}" target="_blank" rel="noopener" data-ev="svc:${x.n.slice(0, 30)}">${T('Open the official site')}${EXT}</a></div>`)); });
   if (!list.length) box.appendChild(el('div', 'card', '<p class="muted" style="margin:0">' + T('No service matches this search.') + '</p>'));
   postHeight();
 }
